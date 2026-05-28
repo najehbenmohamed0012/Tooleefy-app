@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif;
+  
+  --color-primary: #006241;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #00754A;
+  --color-dark: #1E3932;
+  --color-accent: #F3F1E7;
+  
+  --color-background: #FFFFFF;
+  --color-foreground: #020617;
+  
+  --color-muted: #F8FAFC;
+  --color-muted-foreground: #64748B;
+  
+  --color-card: #FFFFFF;
+  --color-card-foreground: #020617;
+  
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  
+  --shadow-premium: 0 20px 40px -12px rgba(0, 98, 65, 0.12);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-dark dark:text-white;
+  }
+}
+
+.dark {
+  --color-background: #0B1612;
+  --color-foreground: #F8FAFC;
+  
+  --color-muted: #1E3932;
+  --color-muted-foreground: #94A3B8;
+  
+  --color-card: #1E3932;
+  --color-card-foreground: #F8FAFC;
+  
+  --color-border: #2D4C42;
+  --color-input: #2D4C42;
+  
+  --shadow-premium: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+}
+
+.glass-nav {
+  @apply bg-background border-b border-border sticky top-0 z-50 transition-colors duration-300;
+}
+
+.dark .glass-nav {
+  @apply bg-background border-white/10;
+}
+
+.bento-card {
+  @apply relative overflow-hidden rounded-[2.5rem] bg-card border border-border transition-all duration-500 hover:shadow-premium hover:-translate-y-1;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));

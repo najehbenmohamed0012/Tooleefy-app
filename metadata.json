@@ -1,0 +1,6 @@
+{
+  "name": "Tooleefy",
+  "description": "Premium free business and financial productivity tools platform. Generate invoices, QR codes, barcodes, and convert units instantly.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
